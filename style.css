@@ -1,5 +1,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+--accent-color: #a78bfa;
+--accent-hover: #b99dfc;
+}
+
 body {
 min-height: 100vh;
 display: flex;
@@ -50,8 +55,35 @@ transition: all 0.15s ease;
 .btn:hover { background: #36363b; }
 .btn:active { transform: scale(0.95); }
 
-.btn.op { color: #a78bfa; }
-.btn.equal { background: #a78bfa; color: #0f0f10; font-weight: 600; }
-.btn.equal:hover { background: #b99dfc; }
+.btn.op { color: var(--accent-color); }
+.btn.equal { background: var(--accent-color); color: #0f0f10; font-weight: 600; }
+.btn.equal:hover { background: var(--accent-hover); }
 
 .wide { grid-column: span 2; }
+
+/* Палитра цветов */
+.color-palette {
+display: flex;
+justify-content: center;
+gap: 12px;
+margin-top: 20px;
+padding-top: 20px;
+border-top: 1px solid #2a2a2e;
+}
+
+.color-btn {
+width: 32px;
+height: 32px;
+border-radius: 50%;
+border: 3px solid transparent;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.color-btn:hover {
+transform: scale(1.2);
+}
+
+.color-btn.active {
+border-color: #fff;
+}

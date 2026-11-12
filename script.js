@@ -53,3 +53,17 @@ document.addEventListener('keydown', (e) => {
   e.preventDefault();
   display.textContent = current;
 });
+
+// Смена цветов
+document.querySelectorAll('.color-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const color = btn.dataset.color;
+    const hover = btn.dataset.hover;
+    
+    document.documentElement.style.setProperty('--accent-color', color);
+    document.documentElement.style.setProperty('--accent-hover', hover);
+    
+    document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
