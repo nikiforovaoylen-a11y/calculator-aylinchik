@@ -14,6 +14,82 @@ background: #0f0f10;
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+.wrapper {
+display: flex;
+gap: 20px;
+align-items: stretch;
+}
+
+/* История */
+.history-panel {
+width: 200px;
+background: #1a1a1c;
+border-radius: 24px;
+padding: 20px;
+display: flex;
+flex-direction: column;
+box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.history-panel h3 {
+color: #fff;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-bottom: 14px;
+opacity: 0.6;
+}
+
+#history-list {
+list-style: none;
+flex: 1;
+overflow-y: auto;
+max-height: 360px;
+}
+
+#history-list li {
+padding: 10px;
+border-radius: 10px;
+margin-bottom: 6px;
+cursor: pointer;
+transition: background 0.15s ease;
+}
+
+#history-list li:hover {
+background: #2a2a2e;
+}
+
+#history-list .expr {
+color: #888;
+font-size: 13px;
+display: block;
+}
+
+#history-list .result {
+color: var(--accent-color);
+font-size: 18px;
+font-weight: 600;
+}
+
+.clear-history-btn {
+margin-top: 12px;
+background: transparent;
+border: 1px solid #2a2a2e;
+color: #888;
+padding: 8px;
+border-radius: 10px;
+cursor: pointer;
+font-size: 13px;
+transition: all 0.15s ease;
+}
+
+.clear-history-btn:hover {
+border-color: var(--accent-color);
+color: var(--accent-color);
+}
+
+/* Калькулятор */
 .calculator {
 width: 340px;
 background: #1a1a1c;
@@ -61,14 +137,58 @@ transition: all 0.15s ease;
 
 .wide { grid-column: span 2; }
 
-/* Палитра цветов */
+/* Стрелка палитры */
+.palette-toggle {
+width: 100%;
+margin-top: 16px;
+background: transparent;
+border: 1px solid #2a2a2e;
+color: #888;
+padding: 10px;
+border-radius: 12px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+font-size: 13px;
+transition: all 0.2s ease;
+}
+
+.palette-toggle:hover {
+border-color: var(--accent-color);
+color: var(--accent-color);
+}
+
+.palette-toggle .arrow {
+display: inline-block;
+transition: transform 0.3s ease;
+}
+
+.palette-toggle.collapsed .arrow {
+transform: rotate(180deg);
+}
+
+/* Палитра */
 .color-palette {
 display: flex;
 justify-content: center;
 gap: 12px;
-margin-top: 20px;
-padding-top: 20px;
+margin-top: 16px;
+padding-top: 16px;
 border-top: 1px solid #2a2a2e;
+max-height: 80px;
+opacity: 1;
+overflow: hidden;
+transition: max-height 0.35s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+}
+
+.color-palette.hidden {
+max-height: 0;
+opacity: 0;
+margin-top: 0;
+padding-top: 0;
+border-top: none;
 }
 
 .color-btn {
@@ -80,10 +200,12 @@ cursor: pointer;
 transition: all 0.2s ease;
 }
 
-.color-btn:hover {
-transform: scale(1.2);
-}
+.color-btn:hover { transform: scale(1.2); }
+.color-btn.active { border-color: #fff; }
 
-.color-btn.active {
-border-color: #fff;
+/* Мобилки */
+@media (max-width: 620px) {
+.wrapper { flex-direction: column-reverse; align-items: center; }
+.history-panel { width: 340px; }
+#history-list { max-height: 150px; }
 }
