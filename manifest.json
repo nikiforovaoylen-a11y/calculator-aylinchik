@@ -2,7 +2,7 @@
   "name": "Aylinchik Calculator",
   "short_name": "Calculator",
   "description": "Минималистичный калькулятор с историей и сменой цветов",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0f0f10",
   "theme_color": "#a78bfa",
@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "icon2.png",
       "sizes": "512x512",
       "type": "image/png"
     }
