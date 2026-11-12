@@ -209,3 +209,52 @@ transition: all 0.2s ease;
 .history-panel { width: 340px; }
 #history-list { max-height: 150px; }
 }
+/* Кнопка сворачивания истории */
+.history-toggle {
+width: 100%;
+background: transparent;
+border: none;
+color: #888;
+padding: 12px 10px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+transition: color 0.2s ease;
+}
+
+.history-toggle:hover {
+color: var(--accent-color);
+}
+
+.history-toggle .arrow {
+display: inline-block;
+transition: transform 0.3s ease;
+font-size: 10px;
+}
+
+.history-toggle.collapsed .arrow {
+transform: rotate(-180deg);
+}
+
+/* Контент истории (сворачивается) */
+.history-content {
+max-height: 400px;
+opacity: 1;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+flex: 1;
+transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.history-content.hidden {
+max-height: 0;
+opacity: 0;
+margin-top: 0;
+}

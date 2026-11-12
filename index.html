@@ -15,11 +15,16 @@
 
 			<!-- История -->
 			<div class="history-panel">
-				<h3>History</h3>
-				<ul id="history-list"></ul>
-				<button id="clear-history" class="clear-history-btn">Clear</button>
-			</div>
+				<button class="history-toggle" id="history-toggle">
+					<span class="arrow">◀</span>
+					<span class="label">History</span>
+				</button>
 
+				<div class="history-content" id="history-content">
+					<ul id="history-list"></ul>
+					<button id="clear-history" class="clear-history-btn">Clear</button>
+				</div>
+			</div>
 			<!-- Калькулятор -->
 			<div class="calculator">
 				<div class="display" id="display">0</div>

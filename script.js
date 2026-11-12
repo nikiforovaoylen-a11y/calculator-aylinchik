@@ -122,3 +122,11 @@ document.querySelectorAll('.color-btn').forEach(btn => {
 // Первый рендер
 render();
 renderHistory();
+// Сворачивание истории
+const historyToggle = document.getElementById('history-toggle');
+const historyContent = document.getElementById('history-content');
+
+historyToggle.addEventListener('click', () => {
+  historyContent.classList.toggle('hidden');
+  historyToggle.classList.toggle('collapsed');
+});
